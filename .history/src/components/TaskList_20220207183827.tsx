@@ -14,7 +14,6 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
-  // Adicionar uma nova task
   function handleCreateNewTask() {
     // se o newTaskTitle estiver vazio, a tarefa nao sera adicionada, entao so damos um return
     if(!newTaskTitle) return;
@@ -29,21 +28,15 @@ export function TaskList() {
     // aqui estamos resetando o setNewTaskTitle para que nao precise apagar o valor que foi digitado
     setNewTaskTitle('');
   }
-  
-  // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
-  function handleToggleTaskCompletion(id: number) {
-    const newTasks = tasks.map(task => task.id == id ? {
-      ...task,
-      isComplete: !task.isComplete
-    } : task);
 
-    setTasks(newTasks);
+  function handleToggleTaskCompletion(id: number) {
+    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
   }
 
-  // Remove uma task pela listagem da id
   function handleRemoveTask(id: number) {
-    const filteredTasks = tasks.filter(task => task.id !== id); // estamos filtrando todos os arrays para pegar as tasks pelos ids
-    setTasks(filteredTasks); // passo para o estado setTasks a const feita acima
+    const filteredTasks = tasks.filter(task => task.id !== id); // estamos filtrando todos os arrays
+
+    setTasks(filteredTasks);
   }
 
   return (

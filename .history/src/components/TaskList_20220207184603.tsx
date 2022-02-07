@@ -36,8 +36,6 @@ export function TaskList() {
       ...task,
       isComplete: !task.isComplete
     } : task);
-
-    setTasks(newTasks);
   }
 
   // Remove uma task pela listagem da id

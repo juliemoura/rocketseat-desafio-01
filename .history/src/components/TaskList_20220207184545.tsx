@@ -35,9 +35,7 @@ export function TaskList() {
     const newTasks = tasks.map(task => task.id == id ? {
       ...task,
       isComplete: !task.isComplete
-    } : task);
-
-    setTasks(newTasks);
+    })
   }
 
   // Remove uma task pela listagem da id
